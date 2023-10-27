@@ -98,6 +98,19 @@ nav a:hover {
 }
 
 /* Dropdown */
+.dropdown > a{
+  display:flex;
+  align-items: center;
+}
+.caret{
+  display:inline-block;
+  height:20px;
+  margin-left: 1.8rem;
+  transform: rotate(180deg);
+  transition: transform 150ms ease-in-out;
+}
+
+
 .dropdown-content {
   background-color: #880808;
   max-height: 0;
@@ -107,5 +120,9 @@ nav a:hover {
 }
 .menu li.active > ul {
   max-height: 1000px;
+}
+
+.menu li.active .caret{
+  transform: rotate(0);
 }
 
