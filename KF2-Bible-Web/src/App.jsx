@@ -5,6 +5,8 @@ import './App.css'
 import ApiTestCall from './components/ApiTestCall'
 import Weapons from './components/BreakpointsCalculator/Weapons'
 import ZEDs from './components/BreakpointsCalculator/ZEDs'
+import Menu from './components/Menu/Menu'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,7 +16,8 @@ function App() {
   // move stuff around
   return (
     <>
-      <h1>kf2 bible but readable</h1>
+      {/* <h1>kf2 bible but readable</h1> */}
+      <Menu />
       {/* <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -35,7 +38,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p> */}
-      <div style={{display: "flex", justifyContent: "space-between"}}>
+      {/* <div style={{display: "flex", justifyContent: "space-between"}}>
         <Weapons></Weapons>
         <ZEDs></ZEDs>
       </div>
@@ -46,8 +49,8 @@ function App() {
         <p>
           zed hp / gun dmg = profit
         </p>
-      </div>
-      <ApiTestCall></ApiTestCall>
+      </div> */}
+      {/* <ApiTestCall></ApiTestCall> */}
     </>
   )
 }
