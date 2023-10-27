@@ -3,9 +3,12 @@ import React, { useState } from "react";
 const Dropdown = ({ title, classNames, list }) => {
   const [active, setActive] = useState(false);
 
-  const handleClick = () => {
+  const handleClick = (event) => {
     setActive(!active);
   };
+  const handleClickStop =(event) =>{
+    event.stopPropagation();
+  }
   return (
     <li className={`dropdown ${active ? "active" : ""}`} onClick={handleClick}>
       <a href="#!">
@@ -16,7 +19,7 @@ const Dropdown = ({ title, classNames, list }) => {
           className="caret"
         />
       </a>
-      <ul className={`dropdown-content ${classNames}`}>{list}</ul>
+      <ul className={`dropdown-content ${classNames}`} onClick={handleClickStop}>{list}</ul>
     </li>
   );
 };
