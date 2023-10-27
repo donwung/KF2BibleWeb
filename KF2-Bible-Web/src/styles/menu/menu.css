@@ -1,6 +1,78 @@
+
+/* Hamburger */
+.hamburger-menu{
+    position: fixed;
+    left:1.8rem;
+    top:1.8rem;
+    background-color: white;
+    width:50px;
+    cursor: pointer;
+    border-radius: 8px;
+    padding:8px;
+}
+/* Header */
 header {
+  position: fixed;
+  width: 100%;
   font-family: "Bebas Neue", sans-serif;
   background-color: black;
+  overflow: auto;
+  height:100vh;
+  width:0;
+  transition: width 150ms ease-in-out;
+  white-space: nowrap;
+  z-index: 10;
+}
+header.active{
+  width:min(500px, 100%);
+}
+
+/* Logo Styling */
+.menu a[href="#@"]{
+    width: fit-content;
+    padding: 0;
+    margin: 1.8rem;
+}
+.menu a[href="#@"]:hover{
+    background-color: unset;
+}
+.logo{
+    width:70px;
+    background-color: black;
+}
+/* Exit */
+.exit-icon{
+    position: absolute;
+    right:1.8rem;
+    top:1.8rem;
+    width:50px;
+    height:50px;
+    padding:1rem;
+    border-radius: 8px;
+    transition: background-color 100ms ease-in-out;
+    cursor: pointer;
+}
+.exit-icon:hover{
+    background-color: #880808;
+}
+/* Menu */
+.gradient{
+  position: fixed;
+  transition: opacity 150ms ease-in-out;
+  height:100dvh;
+  width:100%;
+  pointer-events: none;
+  background-color: #0000007e;
+  opacity: 0;
+  cursor: pointer;
+}
+.gradient.active{
+  pointer-events: auto;
+  opacity: 1;
+  z-index: 1;
+}
+.menu li{
+    position: relative;
 }
 .menu a {
   width: 100%;
@@ -11,28 +83,29 @@ nav a {
   color: white;
   text-decoration: none;
 }
-nav a:hover{
-    background-color: #7A43B6;
+nav a:hover {
+  background-color: #7a43b6;
 }
 /* Perk Icon & List */
 .perk-icon {
-    width: 50px;
+  width: 50px;
 }
-.perk-dropdown a{
-    display: flex;
-    padding-left: 3.6rem;
-    align-items: center;
-    gap:1.8rem;
+.perk-dropdown a {
+  display: flex;
+  padding-left: 3.6rem;
+  align-items: center;
+  gap: 1.8rem;
 }
 
 /* Dropdown */
-.dropdown-content{
-    background-color: #880808;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 150ms ease-in-out, opacity 150ms ease-in-out, transform 150ms ease-in-out;
+.dropdown-content {
+  background-color: #880808;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 150ms ease-in-out, opacity 150ms ease-in-out,
+    transform 150ms ease-in-out;
 }
-.menu li.active > ul{
-    max-height: 1000px;
+.menu li.active > ul {
+  max-height: 1000px;
 }
 
