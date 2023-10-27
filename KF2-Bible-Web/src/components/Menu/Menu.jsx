@@ -1,5 +1,7 @@
 import PerkMenu from "./PerkMenu"
+import Dropdown from "./Dropdown";
 import "../../styles/menu/menu.css"
+
 
 const Menu = () => {
   const precision = [
@@ -10,20 +12,14 @@ const Menu = () => {
     "swat",
     "medic",
   ];
+
   const precisionList = precision.map((perk)=> <PerkMenu perkName={perk}/>)
   return (
     <header>
       <nav className="container">
         <ul className="menu">
-          <li>
-            <a href="#!">Precision Perks</a>
-            <ul className="dropdown">
-              {precisionList}
-            </ul>
-          </li>
-          <li>
-            <a href="#!">Chaos Perks</a>
-          </li>
+          <Dropdown title="Precision Perks" classNames={"perk-dropdown"} list={<PerkMenu perkType="precision"/>}/>
+          <Dropdown title="Chaos Perks" classNames={"perk-dropdown"} list={<PerkMenu perkType="chaos"/>}/>
           <li>
             <a href="#!">Tools</a>
           </li>

@@ -1,8 +1,23 @@
 import React from 'react'
 
-const PerkMenu = ({perkName}) => {
+const PerkMenu = ({perkType}) => {
+  const precision = [
+    "commando",
+    "support",
+    "medic",
+    "gunslinger",
+    "sharpshooter",
+    "swat"
+  ];
+  const chaos =['beserker','demolitionist', 'firebug', 'survivalist']
+  const createList = (array) =>{
+    return array.map((perk)=> <li key={`${perk}`}><a href="#!"><img className="perk-icon"src={`../src/assets/img/perk/perk-icons/${perk}-icon.svg`} alt="" /><span className="perk-name">{perk}</span></a></li>)
+  }
+
   return (
-    <li><a href="#!"><img src={`../src/assets/img/perk/perk-icons/${perkName}-icon.svg`} alt="" /><span className={perkName}>{perkName}</span></a></li>
+    <>
+      {perkType === "precision" ? createList(precision) : createList(chaos)}
+    </>
   )
 }
 

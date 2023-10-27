@@ -1,4 +1,38 @@
-
-header{
-    font-family: 'Bebas Neue', sans-serif;
+header {
+  font-family: "Bebas Neue", sans-serif;
+  background-color: black;
 }
+.menu a {
+  width: 100%;
+  font-size: 3rem;
+  padding: 1.8rem;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+}
+nav a:hover{
+    background-color: #7A43B6;
+}
+/* Perk Icon & List */
+.perk-icon {
+    width: 50px;
+}
+.perk-dropdown a{
+    display: flex;
+    padding-left: 3.6rem;
+    align-items: center;
+    gap:1.8rem;
+}
+
+/* Dropdown */
+.dropdown-content{
+    background-color: #880808;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 150ms ease-in-out, opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+.menu li.active > ul{
+    max-height: 1000px;
+}
+
