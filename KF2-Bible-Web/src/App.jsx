@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import ApiTestCall from './components/ApiTestCall'
 import Weapons from './components/BreakpointsCalculator/Weapons'
 import ZEDs from './components/BreakpointsCalculator/ZEDs'

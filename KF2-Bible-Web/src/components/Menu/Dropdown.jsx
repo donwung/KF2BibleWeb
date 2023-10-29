@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import arrow from "../../assets/img/menu/up-arrow.svg"
 const Dropdown = ({ title, classNames, list }) => {
   const [active, setActive] = useState(false);
 
@@ -14,7 +14,7 @@ const Dropdown = ({ title, classNames, list }) => {
       <a href="#!">
         {title}{" "}
         <img
-          src="../src/assets/img/menu/up-arrow.svg"
+          src={arrow}
           alt=""
           className="caret"
         />

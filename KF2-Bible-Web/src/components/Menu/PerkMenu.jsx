@@ -11,7 +11,7 @@ const PerkMenu = ({perkType}) => {
   ];
   const chaos =['beserker','demolitionist', 'firebug', 'survivalist']
   const createList = (array) =>{
-    return array.map((perk)=> <li key={`${perk}`}><a href="#!"><img className="perk-icon"src={`../src/assets/img/perk/perk-icons/${perk}-icon.svg`} alt="" /><span className="perk-name">{perk}</span></a></li>)
+    return array.map((perk)=> <li key={`${perk}`}><a href="#!"><img className="perk-icon"src={`./perk-icons/${perk}-icon.svg`} alt="" /><span className="perk-name">{perk}</span></a></li>)
   }
 
   return (
