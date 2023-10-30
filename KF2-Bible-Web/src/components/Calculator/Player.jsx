@@ -1,20 +1,17 @@
 import React, { useContext } from 'react'
 import {perkContext} from "./Calculator.jsx"
+import perks from "../../assets/data/perks.json"
 const Player = () => {
+    // Perk Modifier Context
     const [perkModifier, setPerkModifier] = useContext(perkContext)
-    // setPerkModifier([...perkModifier])
-    // console.log([...perkModifier])
-    const handleClick = () =>{
-        let test = ['asd']
-        test.push('asdddd')
-        let newData = [...perkModifier]
-        console.log(test)
-        newData.push("raaaa")
-        setPerkModifier(newData)
-    }
+    const perkDropdown = perks.map((perk)=>{
+      return <option value={perk} key={perk.name}>{perk.name}</option>
+    })
   return (
     <div className="player">
-        <button onClick={handleClick}>asd</button>
+        <select name="" id="" >
+          {perkDropdown}
+        </select>
     </div>
   )
 }
