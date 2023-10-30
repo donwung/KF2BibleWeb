@@ -24,7 +24,7 @@ header {
   z-index: 10;
 }
 header.active{
-  width:min(500px, 100%);
+  width:min(350px, 100%);
 }
 
 /* Logo Styling */
@@ -56,6 +56,7 @@ header.active{
     background-color: #880808;
 }
 /* Menu */
+
 .gradient{
   position: fixed;
   transition: opacity 150ms ease-in-out;
