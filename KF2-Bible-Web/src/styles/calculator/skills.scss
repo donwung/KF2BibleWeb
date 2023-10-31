@@ -1,0 +1,56 @@
+[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+[type="radio"] + img {
+  cursor: pointer;
+}
+
+/* CHECKED STYLES */
+[type="radio"]:checked + img {
+  background-color: red;
+}
+
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h3{
+    text-align: center;
+  }
+  label{
+    position: relative;
+  }
+  .radio{
+    display: flex;
+    align-items: center;
+    .hidden{
+      opacity: 0;
+      transform: translateX(-10px);
+      transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+      top:0%;
+      width:400px;
+      background-color: white;
+      color:black;
+      position: absolute;
+      padding:1rem;
+      border-radius: 8px;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .hidden.left{
+      right:120%;
+    }
+    .hidden.right{
+      left:120%;
+    }
+    label:hover > .hidden{
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}

@@ -1,22 +1,24 @@
-import { useState } from 'react'
-import ApiTestCall from './components/ApiTestCall'
-import Weapons from './components/BreakpointsCalculator/Weapons'
-import ZEDs from './components/BreakpointsCalculator/ZEDs'
-import Menu from './components/Menu/Menu'
-import Calculator from './components/Calculator/Calculator'
-
+import { useState } from "react";
+import ApiTestCall from "./components/ApiTestCall";
+import Weapons from "./components/BreakpointsCalculator/Weapons";
+import ZEDs from "./components/BreakpointsCalculator/ZEDs";
+import Menu from "./components/Menu/Menu";
+import Calculator from "./components/Calculator/Calculator";
+import "./styles/reset.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
-  // TODO: 
+  // TODO:
   // apply a stylesheet and remove instances of style={}
   // move stuff around
   return (
     <>
-      {/* <h1>kf2 bible but readable</h1> */}
       <Menu />
-      <Calculator/>
+      <div className="container">
+        <Calculator />
+      </div>
+      {/* <h1>kf2 bible but readable</h1> */}
       {/* <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -51,7 +53,7 @@ function App() {
       </div> */}
       {/* <ApiTestCall></ApiTestCall> */}
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,19 +1,51 @@
-import React, { useContext } from 'react'
-import {perkContext} from "./Calculator.jsx"
-import perks from "../../assets/data/perks.json"
+import React, { useContext } from "react";
+import { lvlContext, perkContext } from "./Calculator.jsx";
+import perks from "../../assets/data/perks.json";
+import Skills from "./Skills.jsx";
 const Player = () => {
-    // Perk Modifier Context
-    const [perkModifier, setPerkModifier] = useContext(perkContext)
-    const perkDropdown = perks.map((perk)=>{
-      return <option value={perk} key={perk.name}>{perk.name}</option>
-    })
+  // Contexts
+  const [perkObject, setPerkObject] = useContext(perkContext);
+  const [lvl, setLvl] = useContext(lvlContext);
+  // Creates DropDown Options and passes perk skills as the values
+  const perkDropdown = perks.map((perk) => (
+    <option value={JSON.stringify(perk)} key={perk.name}>
+      {perk.name}
+    </option>
+  ));
+
+  // Handle
+  const handlePerkChange = (event) => {
+    setPerkObject(event.target.value);
+  };
+  const handleLvlChange = (event) => {
+    let value = event.target.value;
+    if (value > 25) value = 25;
+    else if (value < 1) value = 1;
+    event.target.value = value;
+    setLvl(value);
+  };
   return (
     <div className="player">
-        <select name="" id="" >
-          {perkDropdown}
-        </select>
+      <select
+        name="perkSelection"
+        id="perkSelection"
+        onChange={(event) => handlePerkChange(event)}
+      >
+        {perkDropdown}
+      </select>
+      <input
+        type="number"
+        name="lvl"
+        id="lvl"
+        defaultValue={25}
+        onChange={(event) => {
+          handleLvlChange(event);
+        }}
+        step={5}
+      />
+      <Skills />
     </div>
-  )
-}
+  );
+};
 
-export default Player
+export default Player;
