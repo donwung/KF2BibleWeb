@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { lvlContext, perkContext } from "./Calculator.jsx";
 import perks from "../../assets/data/perks.json";
-import Skills from "./Skills.jsx";
+import SkillList from "./SkillList.jsx";
 const Player = () => {
   // Contexts
   const [perkObject, setPerkObject] = useContext(perkContext);
@@ -43,7 +43,7 @@ const Player = () => {
         }}
         step={5}
       />
-      <Skills />
+      <SkillList />
     </div>
   );
 };

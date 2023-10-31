@@ -5,65 +5,75 @@
             "lvl-5": {
                 "tier-name":"Movement",
                 "left": {
-                    "default": false,
                     "skill-name": "Sniper",
+                    "description": "Increase damage 25% while stationary and using perk weapons.",
+                    "default": false,
                     "damage-modifier": 0.25
                 },
                 "right": {
-                    "default": true,
                     "skill-name": "Marksman",
+                    "description":"Increase shooting speed by 25% and movement speed by 10% when using perk weapons.",
+                    "default": true,
                     "damage-modifier": 0
                 }
             },
             "lvl-10": {
                 "tier-name":"Basic Technique",
                 "left": {
-                    "default": true,
                     "skill-name": "Stability",
+                    "description":"Increase damage 30%, movement speed 50%, and reload speed 20% while crouching and using a perk weapon",
+                    "default": true,
                     "damage-modifier": 0.3
                 },
                 "right": {
-                    "default": false,
                     "skill-name": "Ballistic Shock",
+                    "description": "Increase stun power of perk weapons 100%.",
+                    "default": false,
                     "damage-modifier": 0
                 }
             },
             "lvl-15": {
                 "tier-name":"Skill",
                 "left": {
-                    "default": true,
                     "skill-name": "Rack 'em Up",
+                    "description":"Each consecutive headshot with a perk weapon increases damage 10%, up to a maximum of 50%.",
+                    "default": true,
                     "damage-modifier": 0
                 },
                 "right": {
-                    "default": false,
                     "skill-name": "Tactical Reload",
+                    "description":"Increase reload speed with perk weapons.",
+                    "default": false,
                     "damage-modifier": 0
                 }
             },
             "lvl-20": {
+                "tier-name":"Equipment",
                 "left": {
-                    "tier-name":"Equipment",
-                    "default": true,
                     "skill-name": "Dead Eye",
+                    "description":"Reduce recoil 10% and increase head shot damage 10% when using iron sights with a perk weapon.",
+                    "default": true,
                     "damage-modifier": "0.1 ADS"
                 },
                 "right": {
+                    "skill-name":"Always Prepared",
+                    "description":"Carry one extra grenade and 25% more ammo for perk weapons.",
                     "default": false,
-                    "skill-name": "Always Prepared",
                     "damage-modifier": 0
                 }
             },
             "lvl-25": {
                 "tier-name":"Master Techniques",
                 "left": {
-                    "default": false,
                     "skill-name": "Asssasin",
+                    "description":"Any head shots with perk weapons have a 5% chance to trigger ZED Time. During ZED Time, increase head shot damage with perk weapons 35%",
+                    "default": false,
                     "damage-modifier": 0.35
                 },
                 "right": {
-                    "default": true,
                     "skill-name": "Ranger",
+                    "description":"Any head shots with perk weapons have a 5% chance to trigger ZED Time. During ZED Time, your head shots with perk weapons will stun any ZED.",
+                    "default": true,
                     "damage-modifier": 0
                 }
             }

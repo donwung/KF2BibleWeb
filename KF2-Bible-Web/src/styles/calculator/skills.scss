@@ -16,14 +16,40 @@
 }
 
 .skills-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  label{
+    display: flex;
+    align-items: center;
+
+  }
+  .skill{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+
+  }
   h3{
+    white-space: nowrap;
     text-align: center;
+    margin-bottom: 1rem;
   }
   label{
     position: relative;
+    .perk-title{
+      white-space: nowrap;
+      position: absolute;
+      pointer-events: none;
+    }
+    .perk-title.left{
+      right:100%;
+      order:-1;
+      margin-right: 1.5rem;
+    }
+    .perk-title.right{
+      order:1;
+      left:100%;
+      margin-left: 1.5rem;
+    }
   }
   .radio{
     display: flex;
