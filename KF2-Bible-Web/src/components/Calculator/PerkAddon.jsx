@@ -1,15 +1,77 @@
-import React, { useContext } from 'react'
-import { focusContext } from './Calculator'
+import React, { useContext } from "react";
+import { bonusContext, skillContext } from "./Calculator";
 
 const PerkAddon = () => {
-    const [focus, setFocus] = useContext(focusContext)
+  const [bonus, setBonus] = useContext(bonusContext);
+  const [skillsObject, setSkillsObject] = useContext(skillContext);
+  const test = (event) => {
+    console.log(event.target.checked);
+  };
+  // Grabs Every Skill and renders a Addon if applicable, then updates bonus state
+  const renderAddon = () => {
+    // bonus is calculated by using damagemodifier then multiplying stacks. Stacks = 1 means its active
+    let bonus = {};
+    let bonusList = [];
+    let skills = JSON.parse(skillsObject);
+    for (let i in skills) {
+      // No Condition For Bonus
+      if (skills[i][1].length < 4) {
+        // Grabs name of skill
+        bonus[`${skills[i][0]}`] = {
+          "damage-modifier": parseFloat(skills[i][1]),
+          stacks: 1,
+        };
+      } else {
+        let addonName = skills[i][1].split(" ")[1];
+        bonus[`${skills[i][0]}`] = {
+          "damage-modifier": parseFloat(skills[i][1]),
+          stacks: 0,
+        };
+        // Rack Em Up Case
+        if (addonName === "Racks") {
+          bonusList.push(
+            <div className="addon">
+              <label htmlFor={skills[i][0]}>{addonName}</label>
+              <input
+                type="number"
+                defaultValue={0}
+                name={skills[i][0]}
+                id={skills[i][0]}
+                min={0}
+                max={5}
+              />
+            </div>
+          );
+        } else {
+          bonusList.push(
+            <div className="addon">
+              <label htmlFor={skills[i][0]}>{addonName}</label>
+              <input
+                type="checkbox"
+                value={1}
+                name={skills[i][0]}
+                id={skills[i][0]}
+              />
+            </div>
+          );
+        }
+      }
+    }
+    return bonusList;
+  };
   return (
     <div className="addon-container">
-        <div className="addon">
-            
-        </div>
+      <div className="addon"></div>
+      <form
+        action=""
+        onChange={(event) => {
+          test(event);
+        }}
+      >
+        {renderAddon()}
+      </form>
     </div>
-  )
-}
+  );
+};
 
-export default PerkAddon
+export default PerkAddon;

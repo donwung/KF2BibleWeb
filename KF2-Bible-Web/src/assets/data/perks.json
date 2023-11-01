@@ -8,7 +8,7 @@
                     "skill-name": "Sniper",
                     "description": "Increase damage 25% while stationary and using perk weapons.",
                     "default": false,
-                    "damage-modifier": "0.25"
+                    "damage-modifier": "0.25 Stationary"
                 },
                 "right": {
                     "skill-name": "Marksman",
@@ -23,7 +23,7 @@
                     "skill-name": "Stability",
                     "description":"Increase damage 30%, movement speed 50%, and reload speed 20% while crouching and using a perk weapon",
                     "default": true,
-                    "damage-modifier": "0.3"
+                    "damage-modifier": "0.3 Crouched"
                 },
                 "right": {
                     "skill-name": "Ballistic Shock",
@@ -38,7 +38,7 @@
                     "skill-name": "Rack 'em Up",
                     "description":"Each consecutive headshot with a perk weapon increases damage 10%, up to a maximum of 50%.",
                     "default": true,
-                    "damage-modifier": "0"
+                    "damage-modifier": "0 Racks"
                 },
                 "right": {
                     "skill-name": "Tactical Reload",
@@ -68,13 +68,13 @@
                     "skill-name": "Asssasin",
                     "description":"Any head shots with perk weapons have a 5% chance to trigger ZED Time. During ZED Time, increase head shot damage with perk weapons 35%",
                     "default": false,
-                    "damage-modifier": "0.35"
+                    "damage-modifier": "0.35 ZED-TIME"
                 },
                 "right": {
                     "skill-name": "Ranger",
                     "description":"Any head shots with perk weapons have a 5% chance to trigger ZED Time. During ZED Time, your head shots with perk weapons will stun any ZED.",
                     "default": true,
-                    "damage-modifier": "0"
+                    "damage-modifier": "0 ZED-TIME"
                 }
             }
         },
