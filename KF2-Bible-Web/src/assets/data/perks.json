@@ -38,7 +38,7 @@
                     "skill-name": "Rack 'em Up",
                     "description":"Each consecutive headshot with a perk weapon increases damage 10%, up to a maximum of 50%.",
                     "default": true,
-                    "damage-modifier": "0 Racks"
+                    "damage-modifier": "0.1 Racks"
                 },
                 "right": {
                     "skill-name": "Tactical Reload",

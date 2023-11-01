@@ -6,12 +6,20 @@ import PerkAddon from "./PerkAddon";
 export const perkContext = createContext();
 export const skillContext = createContext();
 export const lvlContext = createContext();
-export const bonusContext = createContext(0);
+export const bonusContext = createContext("asd");
 const Calculator = () => {
   const [perkObject, setPerkObject] = useState(JSON.stringify(perks[0]));
   const [skillsObject, setSkillsObject] = useState("{}");
   const [lvl, setLvl] = useState(25);
-  const [bonus, setBonus] = useState(0);
+  const [bonus, setBonus] = useState("{}");
+  const getBonus = () => {
+    let total = 0;
+    let obj = JSON.parse(bonus);
+    for (let i in obj) {
+      total += obj[i]["damage-modifier"] * obj[i]["stacks"];
+    }
+    return total;
+  };
   return (
     <div className="container">
       <perkContext.Provider value={[perkObject, setPerkObject]}>
@@ -25,8 +33,8 @@ const Calculator = () => {
       </perkContext.Provider>
       {/* <p>PerkObject:{perkObject}</p> */}
       {/* <p>Skills:{JSON.stringify(skillsObject)}</p> */}
-      <p>Current: Lvl:{lvl}</p>
-      {/* <p>Total Bonus:{bonus}</p> */}
+      {/* <p>Current: Lvl:{lvl}</p> */}
+      <p>Total Bonus:{getBonus()}</p>
     </div>
   );
 };

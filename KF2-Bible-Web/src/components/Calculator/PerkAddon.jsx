@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { bonusContext, skillContext } from "./Calculator";
 
 const PerkAddon = () => {
@@ -7,21 +7,21 @@ const PerkAddon = () => {
   // Grabs Every Skill and renders a Addon if applicable, then updates bonus state
   const renderAddon = () => {
     // bonus is calculated by using damagemodifier then multiplying stacks. Stacks = 1 means its active
-    let bonus = {};
+    let bonusCopy = {};
     let bonusList = [];
     let skills = JSON.parse(skillsObject);
     for (let i in skills) {
       // No Condition For Bonus
       if (skills[i][1].length < 4) {
         // Grabs name of skill
-        bonus[`${skills[i][0]}`] = {
+        bonusCopy[`${skills[i][0]}`] = {
           "damage-modifier": parseFloat(skills[i][1]),
           stacks: 1,
         };
       } else {
         // Gets damage-modifier value and splits the string
         let addonName = skills[i][1].split(" ")[1];
-        bonus[`${skills[i][0]}`] = {
+        bonusCopy[`${skills[i][0]}`] = {
           "damage-modifier": parseFloat(skills[i][1]),
           stacks: 0,
         };
@@ -55,13 +55,35 @@ const PerkAddon = () => {
         }
       }
     }
-    setBonus(JSON.stringify(bonus));
     return bonusList;
   };
   // Gets Bonuses on render
   const handleAddon = () => {
-    // console.log(bonus);
+    // bonus is calculated by using damagemodifier then multiplying stacks. Stacks = 1 means its active
+    let bonusCopy = {};
+    let skills = JSON.parse(skillsObject);
+    for (let i in skills) {
+      // No Condition For Bonus
+      if (skills[i][1].length < 4) {
+        // Grabs name of skill
+        bonusCopy[`${skills[i][0]}`] = {
+          "damage-modifier": parseFloat(skills[i][1]),
+          stacks: 1,
+        };
+      } else {
+        // Gets damage-modifier value and splits the string
+        let addonName = skills[i][1].split(" ")[1];
+        bonusCopy[`${skills[i][0]}`] = {
+          "damage-modifier": parseFloat(skills[i][1]),
+          stacks: 0,
+        };
+      }
+    }
+    setBonus(JSON.stringify(bonusCopy));
   };
+  useEffect(() => {
+    handleAddon();
+  }, [skillsObject]);
   return (
     <div className="addon-container">
       <div className="addon">ADD FOCUS HERE</div>

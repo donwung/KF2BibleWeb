@@ -46,7 +46,6 @@ const Player = () => {
         step={5}
       />
       <SkillList />
-      {skillsObject !== "{}" && <PerkAddon />}
       <PerkAddon />
     </div>
   );
