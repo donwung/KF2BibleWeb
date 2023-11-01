@@ -1,14 +1,13 @@
-
 /* Hamburger */
-.hamburger-menu{
-    position: fixed;
-    left:1.8rem;
-    top:1.8rem;
-    background-color: white;
-    width:50px;
-    cursor: pointer;
-    border-radius: 8px;
-    padding:8px;
+.hamburger-menu {
+  position: fixed;
+  left: 1.8rem;
+  top: 1.8rem;
+  background-color: white;
+  width: 50px;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 8px;
 }
 /* Header */
 header {
@@ -17,63 +16,65 @@ header {
   font-family: "Bebas Neue", sans-serif;
   background-color: black;
   overflow: auto;
-  height:100vh;
-  width:0;
+  height: 100vh;
+  width: 0;
   transition: width 150ms ease-in-out;
   white-space: nowrap;
   z-index: 10;
 }
-header.active{
-  width:min(350px, 100%);
+header.active {
+  width: min(350px, 100%);
 }
-
+header ul {
+  list-style: none;
+}
 /* Logo Styling */
-.menu a[href="#@"]{
-    width: fit-content;
-    padding: 0;
-    margin: 1.8rem;
+.menu a[href="#@"] {
+  width: fit-content;
+  padding: 0;
+  margin: 1.8rem;
 }
-.menu a[href="#@"]:hover{
-    background-color: unset;
+.menu a[href="#@"]:hover {
+  background-color: unset;
 }
-.logo{
-    width:70px;
-    background-color: black;
+.logo {
+  width: 70px;
+  background-color: black;
 }
 /* Exit */
-.exit-icon{
-    position: absolute;
-    right:1.8rem;
-    top:1.8rem;
-    width:50px;
-    height:50px;
-    padding:1rem;
-    border-radius: 8px;
-    transition: background-color 100ms ease-in-out;
-    cursor: pointer;
+.exit-icon {
+  position: absolute;
+  right: 1.8rem;
+  top: 1.8rem;
+  width: 50px;
+  height: 50px;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: background-color 100ms ease-in-out;
+  cursor: pointer;
 }
-.exit-icon:hover{
-    background-color: #880808;
+.exit-icon:hover {
+  background-color: #880808;
 }
 /* Menu */
 
-.gradient{
+.gradient {
   position: fixed;
   transition: opacity 150ms ease-in-out;
-  height:100dvh;
-  width:100%;
+  height: 100dvh;
+  width: 100%;
   pointer-events: none;
   background-color: #0000007e;
   opacity: 0;
   cursor: pointer;
 }
-.gradient.active{
+.gradient.active {
   pointer-events: auto;
   opacity: 1;
   z-index: 1;
 }
-.menu li{
-    position: relative;
+.menu li {
+  position: relative;
 }
 .menu a {
   width: 100%;
@@ -99,18 +100,17 @@ nav a:hover {
 }
 
 /* Dropdown */
-.dropdown > a{
-  display:flex;
+.dropdown > a {
+  display: flex;
   align-items: center;
 }
-.caret{
-  display:inline-block;
-  height:20px;
+.caret {
+  display: inline-block;
+  height: 20px;
   margin-left: 1.8rem;
   transform: rotate(180deg);
   transition: transform 150ms ease-in-out;
 }
-
 
 .dropdown-content {
   background-color: #880808;
@@ -123,7 +123,6 @@ nav a:hover {
   max-height: 1000px;
 }
 
-.menu li.active .caret{
+.menu li.active .caret {
   transform: rotate(0);
 }
-
