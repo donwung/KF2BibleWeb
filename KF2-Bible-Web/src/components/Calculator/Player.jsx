@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
-import { lvlContext, perkContext } from "./Calculator.jsx";
+import { lvlContext, perkContext, skillContext } from "./Calculator.jsx";
 import perks from "../../assets/data/perks.json";
 import SkillList from "./SkillList.jsx";
 import PerkAddon from "./PerkAddon.jsx";
 const Player = () => {
   // Contexts
   const [perkObject, setPerkObject] = useContext(perkContext);
+  const [skillsObject, setSkillsObject] = useContext(skillContext);
   const [lvl, setLvl] = useContext(lvlContext);
   // Creates DropDown Options and passes perk skills as the values
   const perkDropdown = perks.map((perk) => (
@@ -45,6 +46,7 @@ const Player = () => {
         step={5}
       />
       <SkillList />
+      {skillsObject !== "{}" && <PerkAddon />}
       <PerkAddon />
     </div>
   );

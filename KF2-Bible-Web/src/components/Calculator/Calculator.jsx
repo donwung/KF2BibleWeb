@@ -26,7 +26,7 @@ const Calculator = () => {
       {/* <p>PerkObject:{perkObject}</p> */}
       {/* <p>Skills:{JSON.stringify(skillsObject)}</p> */}
       <p>Current: Lvl:{lvl}</p>
-      <p>Total Bonus:{bonus}</p>
+      {/* <p>Total Bonus:{bonus}</p> */}
     </div>
   );
 };

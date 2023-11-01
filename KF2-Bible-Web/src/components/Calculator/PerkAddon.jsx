@@ -4,9 +4,6 @@ import { bonusContext, skillContext } from "./Calculator";
 const PerkAddon = () => {
   const [bonus, setBonus] = useContext(bonusContext);
   const [skillsObject, setSkillsObject] = useContext(skillContext);
-  const test = (event) => {
-    console.log(event.target.checked);
-  };
   // Grabs Every Skill and renders a Addon if applicable, then updates bonus state
   const renderAddon = () => {
     // bonus is calculated by using damagemodifier then multiplying stacks. Stacks = 1 means its active
@@ -22,6 +19,7 @@ const PerkAddon = () => {
           stacks: 1,
         };
       } else {
+        // Gets damage-modifier value and splits the string
         let addonName = skills[i][1].split(" ")[1];
         bonus[`${skills[i][0]}`] = {
           "damage-modifier": parseFloat(skills[i][1]),
@@ -30,7 +28,7 @@ const PerkAddon = () => {
         // Rack Em Up Case
         if (addonName === "Racks") {
           bonusList.push(
-            <div className="addon">
+            <div className="addon" key={addonName}>
               <label htmlFor={skills[i][0]}>{addonName}</label>
               <input
                 type="number"
@@ -44,7 +42,7 @@ const PerkAddon = () => {
           );
         } else {
           bonusList.push(
-            <div className="addon">
+            <div className="addon" key={addonName}>
               <label htmlFor={skills[i][0]}>{addonName}</label>
               <input
                 type="checkbox"
@@ -57,15 +55,20 @@ const PerkAddon = () => {
         }
       }
     }
+    setBonus(JSON.stringify(bonus));
     return bonusList;
+  };
+  // Gets Bonuses on render
+  const handleAddon = () => {
+    // console.log(bonus);
   };
   return (
     <div className="addon-container">
-      <div className="addon"></div>
+      <div className="addon">ADD FOCUS HERE</div>
       <form
         action=""
         onChange={(event) => {
-          test(event);
+          handleAddon(event);
         }}
       >
         {renderAddon()}
