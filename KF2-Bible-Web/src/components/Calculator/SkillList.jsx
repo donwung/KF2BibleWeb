@@ -5,8 +5,8 @@ import Skill from "./Skill"
 import { perkContext, lvlContext } from "./Calculator";
 const SkillList = () => {
   // Context
-  const [perkObject, setPerkObject] = useContext(perkContext);
   const [lvl, setLvl] = useContext(lvlContext);
+  const [perkObject, setPerkObject] = useContext(perkContext)
   // Getter
   const getSkills = (tier) => {
     let obj = JSON.parse(perkObject);
@@ -17,16 +17,22 @@ const SkillList = () => {
     let i = 5
     let skillArray = []
     while (i <= lvl){
-      skillArray.push(<Skill perkTier={i} skills={getSkills(i)}/>)
+      skillArray.push(<Skill perkTier={i} skills={getSkills(i)} key={i} />)
       i +=5
     }
     return skillArray
   }
-
+  // Handles
+  const handleSkill = (event) =>{
+    console.log(event)
+  }
   return (
     <div className="skills-container">
-        {/* <Skill perkTier={25} skills={getSkills(25)}/> */}
+      <form action="" onChange={(event)=>{
+        handleSkill(event)
+      }}>
         {renderList()}
+      </form>
     </div>
   );
 };

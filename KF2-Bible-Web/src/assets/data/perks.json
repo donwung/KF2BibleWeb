@@ -1,6 +1,6 @@
 [
     {
-        "name": "Sharpshooter",
+        "name":"Sharpshooter",
         "skills": {
             "lvl-5": {
                 "tier-name":"Movement",
@@ -73,6 +73,87 @@
                 "right": {
                     "skill-name": "Ranger",
                     "description":"Any head shots with perk weapons have a 5% chance to trigger ZED Time. During ZED Time, your head shots with perk weapons will stun any ZED.",
+                    "default": true,
+                    "damage-modifier": 0
+                }
+            }
+        },
+        "perk-level-bonus": 0.01
+    },
+    {
+        "name": "Commando",
+        "skills": {
+            "lvl-5": {
+                "tier-name":"Ammo Management",
+                "left": {
+                    "skill-name": "Tactical Reload",
+                    "description": "Increase reload speed with perk weapons.",
+                    "default": true,
+                    "damage-modifier": 0
+                },
+                "right": {
+                    "skill-name": "High Capacity Mags",
+                    "description":"Increase magazine capacity of perk weapons 50%.",
+                    "default": false,
+                    "damage-modifier": 0
+                }
+            },
+            "lvl-10": {
+                "tier-name":"Tactics",
+                "left": {
+                    "skill-name": "Fallback",
+                    "description":"Increase damage with your 9mm pistol / hrg 93r and knife 85%, and increase weapon switching speed 50%.",
+                    "default": true,
+                    "damage-modifier": 0
+                },
+                "right": {
+                    "skill-name":"Impact Rounds",
+                    "description": "Increase stumble power for perk weapons 150%.",
+                    "default": false,
+                    "damage-modifier": 0
+                }
+            },
+            "lvl-15": {
+                "tier-name":"Survival",
+                "left": {
+                    "skill-name": "Tenacious",
+                    "description":"Increase total Health and Armor 25%.",
+                    "default": true,
+                    "damage-modifier": 0
+                },
+                "right": {
+                    "skill-name": "Prepared",
+                    "description":"Carry up to 20% more ammo for each perk weapon.",
+                    "default": false,
+                    "damage-modifier": 0
+                }
+            },
+            "lvl-20": {
+                "tier-name":"Weapon Specialist",
+                "left": {
+                    "skill-name": "Hollow Point Rounds",
+                    "description":"Increase damage of perk weapons 30%.",
+                    "default": true,
+                    "damage-modifier": 0.3
+                },
+                "right": {
+                    "skill-name":"Eat Lead",
+                    "description":"Increase magazine capacity of perk weapons 100%.",
+                    "default": false,
+                    "damage-modifier": 0
+                }
+            },
+            "lvl-25": {
+                "tier-name":"Advanced Training",
+                "left": {
+                    "skill-name": "Tactician",
+                    "description":"During ZED Time, you reload perk weapons at full speed and switch perk weapons twice as fast.",
+                    "default": false,
+                    "damage-modifier": 0.35
+                },
+                "right": {
+                    "skill-name": "Machine Gunner",
+                    "description":"During ZED Time, you do 3% more damage with perk weapons and shoot 3x faster with all guns.",
                     "default": true,
                     "damage-modifier": 0
                 }
