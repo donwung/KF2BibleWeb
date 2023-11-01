@@ -8,13 +8,13 @@
                     "skill-name": "Sniper",
                     "description": "Increase damage 25% while stationary and using perk weapons.",
                     "default": false,
-                    "damage-modifier": 0.25
+                    "damage-modifier": "0.25"
                 },
                 "right": {
                     "skill-name": "Marksman",
                     "description":"Increase shooting speed by 25% and movement speed by 10% when using perk weapons.",
                     "default": true,
-                    "damage-modifier": 0
+                    "damage-modifier": "0"
                 }
             },
             "lvl-10": {
@@ -23,13 +23,13 @@
                     "skill-name": "Stability",
                     "description":"Increase damage 30%, movement speed 50%, and reload speed 20% while crouching and using a perk weapon",
                     "default": true,
-                    "damage-modifier": 0.3
+                    "damage-modifier": "0.3"
                 },
                 "right": {
                     "skill-name": "Ballistic Shock",
                     "description": "Increase stun power of perk weapons 100%.",
                     "default": false,
-                    "damage-modifier": 0
+                    "damage-modifier": "0"
                 }
             },
             "lvl-15": {
@@ -38,13 +38,13 @@
                     "skill-name": "Rack 'em Up",
                     "description":"Each consecutive headshot with a perk weapon increases damage 10%, up to a maximum of 50%.",
                     "default": true,
-                    "damage-modifier": 0
+                    "damage-modifier": "0"
                 },
                 "right": {
                     "skill-name": "Tactical Reload",
                     "description":"Increase reload speed with perk weapons.",
                     "default": false,
-                    "damage-modifier": 0
+                    "damage-modifier": "0"
                 }
             },
             "lvl-20": {
@@ -59,7 +59,7 @@
                     "skill-name":"Always Prepared",
                     "description":"Carry one extra grenade and 25% more ammo for perk weapons.",
                     "default": false,
-                    "damage-modifier": 0
+                    "damage-modifier": "0"
                 }
             },
             "lvl-25": {
@@ -68,13 +68,13 @@
                     "skill-name": "Asssasin",
                     "description":"Any head shots with perk weapons have a 5% chance to trigger ZED Time. During ZED Time, increase head shot damage with perk weapons 35%",
                     "default": false,
-                    "damage-modifier": 0.35
+                    "damage-modifier": "0.35"
                 },
                 "right": {
                     "skill-name": "Ranger",
                     "description":"Any head shots with perk weapons have a 5% chance to trigger ZED Time. During ZED Time, your head shots with perk weapons will stun any ZED.",
                     "default": true,
-                    "damage-modifier": 0
+                    "damage-modifier": "0"
                 }
             }
         },
@@ -89,13 +89,13 @@
                     "skill-name": "Tactical Reload",
                     "description": "Increase reload speed with perk weapons.",
                     "default": true,
-                    "damage-modifier": 0
+                    "damage-modifier": "0"
                 },
                 "right": {
                     "skill-name": "High Capacity Mags",
                     "description":"Increase magazine capacity of perk weapons 50%.",
                     "default": false,
-                    "damage-modifier": 0
+                    "damage-modifier": "0"
                 }
             },
             "lvl-10": {
@@ -104,13 +104,13 @@
                     "skill-name": "Fallback",
                     "description":"Increase damage with your 9mm pistol / hrg 93r and knife 85%, and increase weapon switching speed 50%.",
                     "default": true,
-                    "damage-modifier": 0
+                    "damage-modifier": "0"
                 },
                 "right": {
                     "skill-name":"Impact Rounds",
                     "description": "Increase stumble power for perk weapons 150%.",
                     "default": false,
-                    "damage-modifier": 0
+                    "damage-modifier": "0"
                 }
             },
             "lvl-15": {
@@ -119,13 +119,13 @@
                     "skill-name": "Tenacious",
                     "description":"Increase total Health and Armor 25%.",
                     "default": true,
-                    "damage-modifier": 0
+                    "damage-modifier": "0"
                 },
                 "right": {
                     "skill-name": "Prepared",
                     "description":"Carry up to 20% more ammo for each perk weapon.",
                     "default": false,
-                    "damage-modifier": 0
+                    "damage-modifier": "0"
                 }
             },
             "lvl-20": {
@@ -134,13 +134,13 @@
                     "skill-name": "Hollow Point Rounds",
                     "description":"Increase damage of perk weapons 30%.",
                     "default": true,
-                    "damage-modifier": 0.3
+                    "damage-modifier": "0.3"
                 },
                 "right": {
                     "skill-name":"Eat Lead",
                     "description":"Increase magazine capacity of perk weapons 100%.",
                     "default": false,
-                    "damage-modifier": 0
+                    "damage-modifier": "0"
                 }
             },
             "lvl-25": {
@@ -149,13 +149,13 @@
                     "skill-name": "Tactician",
                     "description":"During ZED Time, you reload perk weapons at full speed and switch perk weapons twice as fast.",
                     "default": false,
-                    "damage-modifier": 0.35
+                    "damage-modifier": "0.35"
                 },
                 "right": {
                     "skill-name": "Machine Gunner",
                     "description":"During ZED Time, you do 3% more damage with perk weapons and shoot 3x faster with all guns.",
                     "default": true,
-                    "damage-modifier": 0
+                    "damage-modifier": "0"
                 }
             }
         },
