@@ -43,7 +43,7 @@ const Player = () => {
         onChange={(event) => {
           handleLvlChange(event);
         }}
-        step={5}
+        step={1}
       />
       <SkillList />
       <PerkAddon />

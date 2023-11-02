@@ -68,24 +68,24 @@ const SkillList = () => {
       }
       i += 5;
     }
-    setSkillsObject(JSON.stringify(newSkills))
+    setSkillsObject(JSON.stringify(newSkills));
   };
   // Changes value of tier in skills state
   const handleSkill = (event) => {
-    let copy = JSON.parse(skillsObject)
-    let tier = event.target.name
-    let skillName = event.target.getAttribute('skillname')
-    copy[`${tier}`] = [skillName, event.target.value]
-    setSkillsObject(JSON.stringify(copy))
+    let copy = JSON.parse(skillsObject);
+    let tier = event.target.name;
+    let skillName = event.target.getAttribute("skillname");
+    copy[`${tier}`] = [skillName, event.target.value];
+    setSkillsObject(JSON.stringify(copy));
   };
   // useEffect
   useEffect(() => {
-    handleDefault()
-  }, [perkObject])
+    handleDefault();
+  }, [perkObject]);
 
   useEffect(() => {
-    handleLvl()
-  }, [lvl])
+    handleLvl();
+  }, [lvl]);
 
   return (
     <div className="skills-container">

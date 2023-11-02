@@ -12,14 +12,19 @@ const Calculator = () => {
   const [skillsObject, setSkillsObject] = useState("{}");
   const [lvl, setLvl] = useState(25);
   const [bonus, setBonus] = useState("{}");
+  const [currentBonus, setCurrentBonus] = useState(0);
   const getBonus = () => {
     let total = 0;
     let obj = JSON.parse(bonus);
     for (let i in obj) {
       total += obj[i]["damage-modifier"] * obj[i]["stacks"];
     }
-    return total;
+    total += JSON.parse(perkObject)["perk-level-bonus"] * lvl;
+    setCurrentBonus(total);
   };
+  useEffect(() => {
+    getBonus();
+  }, [bonus, skillsObject, lvl]);
   return (
     <div className="container">
       <perkContext.Provider value={[perkObject, setPerkObject]}>
@@ -34,7 +39,8 @@ const Calculator = () => {
       {/* <p>PerkObject:{perkObject}</p> */}
       {/* <p>Skills:{JSON.stringify(skillsObject)}</p> */}
       {/* <p>Current: Lvl:{lvl}</p> */}
-      <p>Total Bonus:{getBonus()}</p>
+      <p>Total Bonus:{currentBonus}</p>
+      {/* {JSON.stringify(bonus)} */}
     </div>
   );
 };

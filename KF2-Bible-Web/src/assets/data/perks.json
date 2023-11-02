@@ -149,13 +149,13 @@
                     "skill-name": "Tactician",
                     "description":"During ZED Time, you reload perk weapons at full speed and switch perk weapons twice as fast.",
                     "default": false,
-                    "damage-modifier": "0.35"
+                    "damage-modifier": "0 ZED-TIME"
                 },
                 "right": {
                     "skill-name": "Machine Gunner",
                     "description":"During ZED Time, you do 3% more damage with perk weapons and shoot 3x faster with all guns.",
                     "default": true,
-                    "damage-modifier": "0"
+                    "damage-modifier": "0.03 ZED-TIME"
                 }
             }
         },

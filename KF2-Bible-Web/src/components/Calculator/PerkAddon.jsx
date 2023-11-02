@@ -1,9 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useStat, useRef } from "react";
 import { bonusContext, skillContext } from "./Calculator";
 
 const PerkAddon = () => {
   const [bonus, setBonus] = useContext(bonusContext);
   const [skillsObject, setSkillsObject] = useContext(skillContext);
+  const form = useRef();
   // Grabs Every Skill and renders a Addon if applicable, then updates bonus state
   const renderAddon = () => {
     // bonus is calculated by using damagemodifier then multiplying stacks. Stacks = 1 means its active
@@ -11,15 +12,7 @@ const PerkAddon = () => {
     let bonusList = [];
     let skills = JSON.parse(skillsObject);
     for (let i in skills) {
-      // No Condition For Bonus
-      if (skills[i][1].length < 4) {
-        // Grabs name of skill
-        bonusCopy[`${skills[i][0]}`] = {
-          "damage-modifier": parseFloat(skills[i][1]),
-          stacks: 1,
-        };
-      } else {
-        // Gets damage-modifier value and splits the string
+      if (skills[i][1].length > 3) {
         let addonName = skills[i][1].split(" ")[1];
         bonusCopy[`${skills[i][0]}`] = {
           "damage-modifier": parseFloat(skills[i][1]),
@@ -46,9 +39,9 @@ const PerkAddon = () => {
               <label htmlFor={skills[i][0]}>{addonName}</label>
               <input
                 type="checkbox"
-                value={1}
                 name={skills[i][0]}
                 id={skills[i][0]}
+                defaultChecked
               />
             </div>
           );
@@ -57,11 +50,14 @@ const PerkAddon = () => {
     }
     return bonusList;
   };
-  // Gets Bonuses on render
-  const handleAddon = () => {
-    // bonus is calculated by using damagemodifier then multiplying stacks. Stacks = 1 means its active
+  useEffect(() => {
+    updateBonus();
+  }, [skillsObject]);
+
+  const updateBonus = () => {
     let bonusCopy = {};
     let skills = JSON.parse(skillsObject);
+    //Sets Templates for Bonus Objects
     for (let i in skills) {
       // No Condition For Bonus
       if (skills[i][1].length < 4) {
@@ -71,28 +67,27 @@ const PerkAddon = () => {
           stacks: 1,
         };
       } else {
-        // Gets damage-modifier value and splits the string
-        let addonName = skills[i][1].split(" ")[1];
         bonusCopy[`${skills[i][0]}`] = {
           "damage-modifier": parseFloat(skills[i][1]),
           stacks: 0,
         };
       }
     }
+    // Then Sets Stacks according to the value inputed in the Form
+    let addons = Array.from(form.current);
+    addons.forEach((addon) => {
+      if (addon.name !== "Rack 'em Up") {
+        bonusCopy[addon.name]["stacks"] = addon.checked ? 1 : 0;
+      } else {
+        bonusCopy[addon.name]["stacks"] = parseFloat(addon.value);
+      }
+    });
     setBonus(JSON.stringify(bonusCopy));
   };
-  useEffect(() => {
-    handleAddon();
-  }, [skillsObject]);
   return (
     <div className="addon-container">
       <div className="addon">ADD FOCUS HERE</div>
-      <form
-        action=""
-        onChange={(event) => {
-          handleAddon(event);
-        }}
-      >
+      <form action="" ref={form} onChange={updateBonus}>
         {renderAddon()}
       </form>
     </div>
