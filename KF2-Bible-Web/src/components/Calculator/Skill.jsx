@@ -14,12 +14,13 @@ const Skill = ({ perkTier, skills }) => {
               type="radio"
               name={`lvl-${perkTier}`}
               id={`lvl-${perkTier}-left`}
-              value={`ADD VALUE`}
+              skillname={skills.left["skill-name"]}
+              value={skills.left["damage-modifier"]}
               defaultChecked={skills.left.default}
             />
             <img
               src={`./${JSON.parse(perkObject).name}/left-lvl-${perkTier}.webp`}
-              alt="SKILLNAME"
+              alt={`${skills.left["skill-name"]}-icon`}
             />
             <p className="perk-title left">{skills.left["skill-name"]}</p>
             <p className="hidden left">{skills.left.description}</p>
@@ -29,15 +30,16 @@ const Skill = ({ perkTier, skills }) => {
             <input
               type="radio"
               name={`lvl-${perkTier}`}
+              skillname={skills.right["skill-name"]}
               id={`lvl-${perkTier}-right`}
-              value={`ADD VALUE`}
+              value={skills.right["damage-modifier"]}
               defaultChecked={skills.right.default}
             />
             <img
               src={`./${
                 JSON.parse(perkObject).name
               }/right-lvl-${perkTier}.webp`}
-              alt="SKILLNAME"
+              alt={`${skills.left["skill-name"]}-icon`}
             />
             <p className="perk-title right">{skills.right["skill-name"]}</p>
             <p className="hidden right">{skills.right.description}</p>

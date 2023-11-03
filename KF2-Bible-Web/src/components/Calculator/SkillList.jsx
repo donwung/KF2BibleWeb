@@ -73,16 +73,20 @@ const SkillList = () => {
   // Changes value of tier in skills state
   const handleSkill = (event) => {
     let copy = JSON.parse(skillsObject);
-    copy[`${event.target.name}`] = event.target.value;
+    let tier = event.target.name;
+    let skillName = event.target.getAttribute("skillname");
+    copy[`${tier}`] = [skillName, event.target.value];
     setSkillsObject(JSON.stringify(copy));
   };
   // useEffect
   useEffect(() => {
     handleDefault();
   }, [perkObject]);
+
   useEffect(() => {
     handleLvl();
   }, [lvl]);
+
   return (
     <div className="skills-container">
       <form
