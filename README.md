@@ -8,4 +8,4 @@ Secondarily, this project will also provide damage calculation tools for both ca
 
 
 
-###### Project is managed by [Don Do](github.com/donwung) and [Michael Dam](github.com/Voodoo-Dolls).
+###### Project is managed by [Don Do](https://github.com/donwung) and [Michael Dam](https://github.com/Voodoo-Dolls).
