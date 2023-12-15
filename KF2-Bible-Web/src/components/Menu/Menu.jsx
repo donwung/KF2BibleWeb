@@ -1,7 +1,7 @@
 import PerkMenu from "./PerkMenu";
 import Dropdown from "./Dropdown";
 import Logo from "./Logo";
-import "../../styles/menu/menu.css";
+import "../../styles/menu/menu.scss";
 import menuLogo from "../../assets/img/menu/menu.svg";
 import { useState } from "react";
 
