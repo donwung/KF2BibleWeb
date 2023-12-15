@@ -85,7 +85,7 @@ nav a {
   color: white;
   text-decoration: none;
 }
-nav a:hover {
+nav a:hover:not(a.logo) {
   background-color: #7a43b6;
 }
 /* Perk Icon & List */
